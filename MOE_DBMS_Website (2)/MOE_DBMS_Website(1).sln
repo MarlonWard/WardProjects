@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "MOE_DBMS_Website(1)", "http://localhost:60077", "{53FA189F-2B9B-4F57-AF0C-FC81C6BEBF4A}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_60077"
+		Debug.AspNetCompiler.PhysicalPath = "..\MOE_DBMS_Website\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60077\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_60077"
+		Release.AspNetCompiler.PhysicalPath = "..\MOE_DBMS_Website\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60077\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\MOE_DBMS_Website\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53FA189F-2B9B-4F57-AF0C-FC81C6BEBF4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53FA189F-2B9B-4F57-AF0C-FC81C6BEBF4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

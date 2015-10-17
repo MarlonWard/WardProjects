@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MOE_DDatabase" Class="MOE_DataClassModelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=WARDINSPIR;Initial Catalog=MOE_DDatabase;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MOE_DDatabaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.academicYears" Member="academicYears">
+    <Type Name="academicYear">
+      <Column Name="academicYear_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="year" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="startDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="endDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.assessments" Member="assessments">
+    <Type Name="assessment">
+      <Column Name="assessment_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="gradeBook_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="student_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dateGiven" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="score" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="subject_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="remarks" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="assessmentName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.edu_officerComments" Member="edu_officerComments">
+    <Type Name="edu_officerComment">
+      <Column Name="edu_officer_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lessonPlan_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="dateOfComment" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.edu_officers" Member="edu_officers">
+    <Type Name="edu_officer">
+      <Column Name="edu_officer_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="firstName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lastName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="position" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="user_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="middleName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.edu_officerSubjects" Member="edu_officerSubjects">
+    <Type Name="edu_officerSubject">
+      <Column Name="edu_officer_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="subject_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.formclasses" Member="formclasses">
+    <Type Name="formclass">
+      <Column Name="formclass_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="room" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="teacher_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.generalObjectives" Member="generalObjectives">
+    <Type Name="generalObjective">
+      <Column Name="generalObjective_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="objective" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.gradeBooks" Member="gradeBooks">
+    <Type Name="gradeBook">
+      <Column Name="gradeBook_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="academicYear_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="teacher_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.instructionalMaterials" Member="instructionalMaterials">
+    <Type Name="instructionalMaterial">
+      <Column Name="instructionalMaterials_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="material" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lessonplanGeneralobjectives" Member="lessonplanGeneralobjectives">
+    <Type Name="lessonplanGeneralobjective">
+      <Column Name="generalObjective_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lessonPlan_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lessonplanInstructionalMaterials" Member="lessonplanInstructionalMaterials">
+    <Type Name="lessonplanInstructionalMaterial">
+      <Column Name="lessonPlan_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="instructionalMaterials_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lessonPlanMethods" Member="lessonPlanMethods">
+    <Type Name="lessonPlanMethod">
+      <Column Name="lessonPlan_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="method_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lessonplanPlanactivites" Member="lessonplanPlanactivites">
+    <Type Name="lessonplanPlanactivite">
+      <Column Name="planActivity_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lessonPlan_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lessonplanPlancomments" Member="lessonplanPlancomments">
+    <Type Name="lessonplanPlancomment">
+      <Column Name="lessonplan_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="plancomment_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lessonPlans" Member="lessonPlans">
+    <Type Name="lessonPlan">
+      <Column Name="lessonPlan_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="teacher_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="subject_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="startDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="endDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="duration" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="topic" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="subtopic" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="formClass_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PreviousKnowledge" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="plannedContent" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="introduction" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="evaluations" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lessonplanSpecificobjectives" Member="lessonplanSpecificobjectives">
+    <Type Name="lessonplanSpecificobjective">
+      <Column Name="specificObjective_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lessonPlan_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lesssonPlanSteps" Member="lesssonPlanSteps">
+    <Type Name="lesssonPlanStep">
+      <Column Name="lessonPlan_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="step_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.methods" Member="methods">
+    <Type Name="method">
+      <Column Name="method_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.planactivities" Member="planactivities">
+    <Type Name="planactivity">
+      <Column Name="planActivity_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="activity" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.plancomments" Member="plancomments">
+    <Type Name="plancomment">
+      <Column Name="plancomment_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="comment" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="dateOfComment" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.specificObjectives" Member="specificObjectives">
+    <Type Name="specificObjective">
+      <Column Name="specificObjective_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="objective" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.steps" Member="steps">
+    <Type Name="step">
+      <Column Name="step_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="stepNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lessonStep" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.students" Member="students">
+    <Type Name="student">
+      <Column Name="student_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="firstName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="middleName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lastName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.subjects" Member="subjects">
+    <Type Name="subject">
+      <Column Name="subject_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.subjectTeachers" Member="subjectTeachers">
+    <Type Name="subjectTeacher">
+      <Column Name="teacher_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="subject_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.supervisingteacherComments" Member="supervisingteacherComments">
+    <Type Name="supervisingteacherComment">
+      <Column Name="teacher_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lessonPlan_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="comment" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="dateOfComment" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.teachers" Member="teachers">
+    <Type Name="teacher">
+      <Column Name="teacher_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="firstName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="middleName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lastName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="user__ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="position" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.users" Member="users">
+    <Type Name="user">
+      <Column Name="user_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="userName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="isSchoolAdmin" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isMinistryAdmin" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
